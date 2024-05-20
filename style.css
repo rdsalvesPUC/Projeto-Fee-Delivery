@@ -67,13 +67,6 @@ p {
     padding: 3rem;
 }
 
-/* .container-header {
-} */
-
-/* .container-body {
-
-} */
-
 .row {
     display: grid;
     grid-template-columns: auto auto;
@@ -130,8 +123,6 @@ input:focus {
     letter-spacing: 2px;
 }
 
-
-/* CSS do Header */
 .full-logo {
     display: flex;
     flex-direction: row;
@@ -140,8 +131,6 @@ input:focus {
 }
 
 .logo-text {
-    color: var(--CoolGray-30, #C1C7CD);
-
     /* Heading/4 */
     font-family: Roboto;
     font-size: 1.5rem;
@@ -150,9 +139,38 @@ input:focus {
     line-height: 110%; /* 1.65rem */
 }
 
-/* CSS do Footer */
+/* --------------------- */
+/*     CSS do Header     */
+/* --------------------- */
+header {
+    display: flex;
+}
+
+header .logo-text {
+    color: var(--CoolGray-60, #697077);
+}
+
+.header {
+    background: var(--Default-White, #FFF);
+    padding: 1rem 5rem;
+    border-bottom: 1px solid var(--CoolGray-20, #DDE1E6);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    /* width: 100%; */
+}
+
+
+/* --------------------- */
+/*     CSS do Footer     */
+/* --------------------- */
 footer {
     display: flex;
+}
+
+footer .logo-text {
+    color: var(--CoolGray-30, #C1C7CD);
 }
 
 .footer {
