@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Publicar Vaga</title>
+    </head>
+    <body>
+        <main class="main">
+            <nav id="header-container"></nav>
+            <div class="page-background">
+                <div class="container">
+                    <div class="login">
+                        <div class="container-header">
+                            <h1>Log In</h1>
+                            <form action="./button.html">
+
+                                <div class="input-field">
+                                    <div class="user">
+                                        <label>CPF ou CNPJ</label><br>
+                                        <input type="text" name="CPF" id="CPF" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required>
+                                    </div>
+                                    <div class="password">
+                                        <br>
+                                        <label>Senha</label><br>
+                                        <input type="password" name="senha" id="senha" required>
+                                        <p>Sua senha deve ter 8 caracteres.</p>
+                                        <br>
+                                    </div>
+                                    <div class="side-by-side">
+                                        <div>
+                                            <input type="checkbox" name="remember" id="remember">
+                                            <label for="remember">Salvar dados de acesso</label>
+                                        </div>
+                                        <div>
+                                            <a href="./forgot-password.html">Esqueceu sua senha?</a>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <input type="submit" class="button" value="Entrar">
+                                <br>
+                                <br>
+                                <hr>
+                                <br>
+                                <p>Ainda não possui uma conta? <a href="./register.html">Cadastre-se</a></p>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <footer id="footer-container"></footer>
+        </main>
+
+        <script>
+            fetch("footer.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("footer-container").innerHTML = data;
+                });
+
+            fetch("header.html")
+                .then((response) => response.text())
+                .then((data) => {
+                    document.getElementById("header-container").innerHTML = data;
+                });
+        </script>
+    </body>
+</html>

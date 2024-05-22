@@ -19,11 +19,20 @@
 .page-background {
     flex: 1;
     display: flex;
-    align-items: center;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to bottom, #DDE1E6 50%, #ffffff 50%);
+    background: linear-gradient(to left, #DDE1E6 50%, #ffffff 50%);
+}
+.login{
+    width: 90%;
+
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #DDE1E6;
+    margin: 1rem 0;
 }
 
 h1 {
@@ -57,14 +66,20 @@ p {
 }
 
 .container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 50%;
     background-color: #ffffff;
-    border: 1px solid #DDE1E6;
-    width: 500px;
     text-align: left;
-    padding: 3rem;
+}
+
+.side-by-side {
+    display: flex;
+    justify-content: space-between;
 }
 
 .row {
@@ -84,7 +99,6 @@ p {
 }
 
 .password {
-    margin-top: 12px;
     text-align: left;
 }
 
@@ -93,13 +107,14 @@ p {
 }
 
 .input-field {
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 
-.input-field .user input[type="email"],
+.input-field .user input[type="text"],
 .input-field .password input[type="password"] {
-    border: 1px solid #ADADAD;
-    border-radius: 4px;
+    border: 0px;
+    border-bottom: 1px solid #DDE1E6;
+    background-color: #F2F4F8;
     width: 100%;
     padding: 16px;
     outline: none;
@@ -108,18 +123,15 @@ p {
 
 input:active, 
 input:focus {
-    border-color: #22E59A !important;
+    border-color: #a5a5a5 !important;
 }
 
 .button {
     color: white;
-    background-color: #22E59A;
-    border-radius: 6px;
+    background-color: #0F62FE;
     border: 0px;
-    width: 350px;
+    width: 100%;
     padding: 14px;
-    font-weight: 600;
-    font-size: 22px;
     letter-spacing: 2px;
 }
 
