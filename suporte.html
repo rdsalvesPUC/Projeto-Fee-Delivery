@@ -7,28 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="Suporte">
-            <h1>Suporte ao Cliente</h1>
-            <p>Entre em contato através do formulário para solicitar suporte as suas dúvidas ou reportar bugs.</p>
-        </div>
-        <form action="#" method="post">
-            <div class="Nome">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-                <div class="Categoria">
-                    <label for="categoria">Categoria do problema:</label>
-                    <input type="problema" id="problema" name="problema" required>
-                </div>
-                    <div class="descricao">            
-                        <label for="descricao">Descrição do Problema:</label>
-                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
-                    </div>
-                        <div class="Enviar">
-                            <button type="submit">Enviar</button>
+    <main class="main">
+        <nav id="header-container"></nav>
+            <div class="page-background">
+                
+                    <div class="container-header">
+                        <div class="container">
+                            <div class="Suporte">
+                                <h1>Suporte ao Cliente</h1>
+                                <p>Entre em contato através do formulário para solicitar suporte as suas dúvidas ou reportar bugs.</p>
+                                <form action="#" method="post">
+                                    <div class="Nome">
+                                        <label for="name">Nome:</label>
+                                        <input type="text" id="name" name="name" required>
+                                    </div>
+                                    <div class="Categoria"> 
+                                        <label for="categoria">Categoria do problema:</label>
+                                        <input type="problema" id="problema" name="problema" required>
+                                    </div>
+                                    <div class="descricao">            
+                                        <label for="descricao">Descrição do Problema:</label>
+                                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                                    </div>
+                                    <div class="Enviar">
+                                        <button type="submit">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-        </form>
-    </div>
+                    </div>
+                                                        
+            </div>
+    </main>
+            
 </body>
 </html>
