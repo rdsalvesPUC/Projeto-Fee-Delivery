@@ -8,6 +8,7 @@
     font-family: "Roboto", sans-serif;
     line-height: 150%;
     color: #535353;
+    /* border: 1px solid black; */
 }
 
 .main {
@@ -16,23 +17,26 @@
     flex-direction: column;
 }
 
-.page-background {
+.page-body-centered {
     flex: 1;
     display: flex;
+    align-items: center;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to left, #DDE1E6 50%, #ffffff 50%);
-}
-.login{
-    width: 90%;
-
+    padding: 3rem;
 }
 
-hr {
-    border: 0;
-    border-top: 1px solid #DDE1E6;
-    margin: 1rem 0;
+.page-body-splited {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+#page-background {
+    background: linear-gradient(to bottom, #DDE1E6 50%, #ffffff 50%);
 }
 
 h1 {
@@ -43,6 +47,7 @@ h1 {
     font-style: normal;
     font-weight: 700;
     line-height: 110%; /* 2.8875rem */
+    margin: 0px;
 }
 
 h2 {
@@ -55,6 +60,17 @@ h2 {
     line-height: 110%; /* 1.375rem */
 }
 
+label {
+    color: var(--CoolGray-90, #21272A);
+
+    /* Body/S */
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.225rem */
+}
+
 p {
     color: var(--CoolGray-90, #21272A);
 
@@ -65,55 +81,160 @@ p {
     line-height: 140%; /* 1.575rem */
 }
 
-.container {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    width: 50%;
-    background-color: #ffffff;
-    text-align: left;
+hr {
+    border: 0;
+    border-top: 1px solid #DDE1E6;
 }
 
-.side-by-side {
+.container {
+    background-color: #ffffff;
+    border: 1px solid #DDE1E6;
+    width: 50%;
+    text-align: left;
+    padding: 3rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    /* align-items: baseline; */
+    gap: 3rem;
+}
+
+.page-body-splited .container {
+    border: none;
+    padding: 5rem;
+}
+
+.container-img {
+    background: #DDE1E6;
+    width: 50%;
+    height: 100%;
+    padding: 3rem;
+    border: none;
+    box-sizing: border-box;
+}
+
+.container-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.container-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .row {
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 16px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-/* .container-navigation {
-
-} */
-
 .card {
-    border: 1px solid #DDE1E6;
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: 0.75rem;
+    border: 1px solid var(--CoolGray-20, #DDE1E6);
+    background: var(--Default-White, #FFF);
+    
+    display: flex;
+    height: 12.5rem;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1 0 0;
+}
+
+.save-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type=checkbox] {
+    border: 1px solid var(--CoolGray-100, #121619);
+
+    display: flex;
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+input[type=radio] {
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    /* position: absolute; */
+    right: 1rem;
+    top: 1rem;
+}
+
+.container-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.pagination {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+    gap: 1rem;
 }
 
 .password {
-    margin-top: 10px;
+    margin-top: 12px;
     text-align: left;
-    margin-bottom: 10px;
+    position: relative;
+    width: 100%;
+}
+
+.password-field {
+    padding-right: 30px; /* Espaço para o ícone */
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: larger;
+    cursor: pointer;
+    user-select: none;
+}
+
+.support-text {
+    color: var(--CoolGray-60, #697077);
+
+    /* Body/XS */
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.05rem */
 }
 
 .user, .password {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: left;
 }
 
-.input-field {
-    padding: 20px 0px;
-}
-
-.input-field .user input[type="text"],
-.input-field .password input[type="password"] {
+.user input[type="text"],
+.password input[type="password"] {
     border: 0px;
     border-bottom: 1px solid #DDE1E6;
     background-color: #F2F4F8;
@@ -128,13 +249,82 @@ input:focus {
     border-color: #a5a5a5 !important;
 }
 
-.button {
-    color: white;
-    background-color: #0F62FE;
-    border: 0px;
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+button {
+    border: 2px solid var(--Primary-60, #0F62FE);
+    background: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: 3.5rem;
+    padding: 1rem;
+}
+
+button[data-text="Proximo"] {
+    padding-left: 2rem;
+}
+
+.primary-text-button {
+    border: none;
+}
+
+.primary-text-link {
+    border: none;
+    padding: 0;
+    height: auto;
+    justify-content: left;
+}
+
+.button-text {
+    color: var(--Primary-60, #0F62FE);
+    
+    /* Button/L */
+    font-family: Roboto;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 1.25rem */
+    letter-spacing: 0.03125rem;
+}
+
+.text-link, .text-link a {
+    color: var(--Primary-90, #001D6C);
+    
+    /* Body/S */
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.225rem */
+}
+
+.button-filled {
+    border: 2px solid var(--Primary-60, #0F62FE);
+    background: var(--Primary-60, #0F62FE);
+
+    color: var(--Default-White, #FFF);
+
+    /* Button/M */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 1rem */
+    letter-spacing: 0.03125rem;
+
+    display: flex;
     width: 100%;
-    padding: 14px;
-    letter-spacing: 2px;
+    height: 3rem;
+    padding: 1rem 0.75rem;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
 }
 
 .full-logo {
