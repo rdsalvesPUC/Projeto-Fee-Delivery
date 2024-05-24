@@ -9,7 +9,7 @@
     <body>
         <main class="main">
             <nav id="header-container"></nav>
-            <div class="page-background">
+            <div class="page-body-centered" id="page-background">
                 <div class="container">
                     <div class="container-header">
                         <h1>Publicar Vaga</h1>
@@ -63,18 +63,6 @@
             <footer id="footer-container"></footer>
         </main>
 
-        <script>
-            fetch("footer.html")
-                .then((response) => response.text())
-                .then((data) => {
-                    document.getElementById("footer-container").innerHTML = data;
-                });
-
-            fetch("header.html")
-                .then((response) => response.text())
-                .then((data) => {
-                    document.getElementById("header-container").innerHTML = data;
-                });
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
