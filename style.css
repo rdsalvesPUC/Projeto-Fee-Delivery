@@ -36,7 +36,7 @@
 }
 
 #page-background {
-    background: linear-gradient(to bottom, #DDE1E6 50%, #ffffff 50%);
+    background: linear-gradient(to bottom, #DDE1E6 35%, #ffffff 35%);
 }
 
 h1 {
@@ -226,7 +226,7 @@ input[type=radio] {
     line-height: 140%; /* 1.05rem */
 }
 
-.user, .password {
+.user, .password, .form-box {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -234,7 +234,8 @@ input[type=radio] {
 }
 
 .user input[type="text"],
-.password input[type="password"] {
+.password input[type="password"],
+.form-box input {
     border: 0px;
     border-bottom: 1px solid #DDE1E6;
     background-color: #F2F4F8;
