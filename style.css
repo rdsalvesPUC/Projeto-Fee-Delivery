@@ -8,6 +8,7 @@
     font-family: "Roboto", sans-serif;
     line-height: 150%;
     color: #535353;
+    /* border: 1px solid black; */
 }
 
 .main {
@@ -16,14 +17,26 @@
     flex-direction: column;
 }
 
-.page-background {
+.page-body-centered {
     flex: 1;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(to bottom, #DDE1E6 50%, #ffffff 50%);
+    padding: 3rem;
+}
+
+.page-body-splited {
+    flex: 1 0 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: row;
+}
+
+#page-background {
+    background: linear-gradient(to bottom, #DDE1E6 35%, #ffffff 35%);
 }
 
 h1 {
@@ -37,6 +50,27 @@ h1 {
     margin: 0px;
 }
 
+h2 {
+    color: var(--CoolGray-90, #21272A);
+
+    /* Heading/5 */
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%; /* 1.375rem */
+}
+
+label {
+    color: var(--CoolGray-90, #21272A);
+
+    /* Body/S */
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.225rem */
+}
+
 p {
     color: var(--CoolGray-90, #21272A);
 
@@ -47,16 +81,50 @@ p {
     line-height: 140%; /* 1.575rem */
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid #DDE1E6;
+}
+
+.primary-no-border a,
+.primary-outlined a,
+.primary-filled a {
+    text-decoration: none;
+    cursor: pointer;
+    display: inherit;
+    align-items: inherit;
+    gap: inherit;
+}
+
+a:hover, a:focus {
+    cursor: pointer;
+  }
+
 .container {
     background-color: #ffffff;
     border: 1px solid #DDE1E6;
-    width: 712px;
+    min-width: 40%;
+    /* max-width: 60%; */
     text-align: left;
     padding: 3rem;
-    margin: 3rem;
     display: flex;
     flex-direction: column;
+    /* align-items: baseline; */
     gap: 3rem;
+}
+
+.page-body-splited .container {
+    border: none;
+    padding: 5rem;
+}
+
+.container-img {
+    background: #DDE1E6;
+    width: 50%;
+    height: 100%;
+    padding: 3rem;
+    border: none;
+    box-sizing: border-box;
 }
 
 .container-header {
@@ -65,13 +133,16 @@ p {
     gap: 0.5rem;
 }
 
-/* .container-body{
-
-} */
+.container-body{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 16px;
     justify-content: space-between;
     width: 100%;
@@ -84,6 +155,7 @@ p {
     
     display: flex;
     height: 12.5rem;
+    max-width: 300px;
     padding: 1rem;
     flex-direction: column;
     align-items: flex-start;
@@ -91,7 +163,41 @@ p {
     flex: 1 0 0;
 }
 
-input {
+.save-data {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+input[type=checkbox] {
+    appearance: none;
+    border: 1px solid var(--CoolGray-100, #121619);
+    position: relative;
+
+    width: 1.125rem;
+    height: 1.125rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: var(--Primary-60, #0F62FE);
+    border: var(--Primary-60, #0F62FE) !important;
+}
+
+input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    /* top: 2px; */
+    left: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+input[type=radio] {
     display: flex;
     width: 1.5rem;
     height: 1.5rem;
@@ -118,33 +224,107 @@ input {
     gap: 1rem;
 }
 
-.password {
-    margin-top: 12px;
+#form-left-columm {
+    width: 70%;
+}
+
+#form-right-columm {
+    width: 30%;
+}
+
+.password-field {
+    padding-right: 30px; /* Espaço para o ícone */
+    font-size: 16px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: larger;
+    cursor: pointer;
+    user-select: none;
+}
+
+.support-text {
+    color: var(--CoolGray-60, #697077);
+
+    /* Body/XS */
+    font-family: Roboto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.05rem */
+}
+
+/* .user, .password,  */
+
+.form-box {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     text-align: left;
-}
 
-.user, .password {
+    /* margin-top: 12px; */
     text-align: left;
+    position: relative;
+    width: 100%;
 }
 
-.input-field {
-    padding: 50px 0px;
-}
+/* .user input[type="text"], .password input[type="password"], */
 
-.input-field .user input[type="email"],
-.input-field .password input[type="password"] {
-    border: 1px solid #ADADAD;
-    border-radius: 4px;
+.form-box input {
+    border: 0px;
+    border-bottom: 1px solid #DDE1E6;
+    background-color: #F2F4F8;
     width: 100%;
     padding: 16px;
     outline: none;
     box-sizing: border-box;
 }
 
-input:active, 
-input:focus {
-    border-color: #22E59A !important;
+.form-box select {
+    border: 0px;
+    border-bottom: 1px solid #DDE1E6;
+    background-color: #F2F4F8;
+    width: 100%;
+    padding: 16px;
+    outline: none;
+    box-sizing: border-box;
 }
+
+
+
+input:active, 
+input:focus,
+textarea:active,
+textarea:focus {
+    border-bottom: 1px solid #a5a5a5;
+}
+
+input[type="checkbox"]:active,
+input[type="checkbox"]:focus {
+    border: 1px solid var(--CoolGray-100, #121619);
+    border-bottom: 1px solid var(--CoolGray-100, #121619);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    box-sizing: border-box;
+    border: 0px;
+    border-bottom: 1px solid #DDE1E6;
+    background-color: #F2F4F8;
+    padding: 16px;
+    outline: none;
+  }
 
 button {
     border: 2px solid var(--Primary-60, #0F62FE);
@@ -155,19 +335,48 @@ button {
     gap: 1rem;
     height: 3.5rem;
     padding: 1rem;
-    font-style: ;
 }
 
 button[data-text="Proximo"] {
     padding-left: 2rem;
 }
 
-.primary-text-button {
+.primary-filled {
+    border: 2px solid var(--Primary-60, #0F62FE);
+    background: var(--Primary-60, #0F62FE);
+
+    display: flex;
+    height: 3.5rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-no-border {
     border: none;
+}
+
+.primary-text-link {
+    border: none;
+    padding: 0;
+    height: auto;
+    justify-content: left;
 }
 
 .button-text {
     color: var(--Primary-60, #0F62FE);
+    
+    /* Button/L */
+    font-family: Roboto;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 1.25rem */
+    letter-spacing: 0.03125rem;
+}
+
+.primary-filled .button-text {
+    color: var(--Default-White, #FFF);
 
     /* Button/L */
     font-family: Roboto;
@@ -176,6 +385,40 @@ button[data-text="Proximo"] {
     font-weight: 500;
     line-height: 100%; /* 1.25rem */
     letter-spacing: 0.03125rem;
+}
+
+.text-link, .text-link a {
+    color: var(--Primary-90, #001D6C);
+    
+    /* Body/S */
+    font-family: Roboto;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 1.225rem */
+}
+
+.button-filled {
+    border: 2px solid var(--Primary-60, #0F62FE);
+    background: var(--Primary-60, #0F62FE);
+
+    color: var(--Default-White, #FFF);
+
+    /* Button/M */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 1rem */
+    letter-spacing: 0.03125rem;
+
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    padding: 1rem 0.75rem;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
 }
 
 .full-logo {
