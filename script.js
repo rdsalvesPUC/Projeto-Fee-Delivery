@@ -11,7 +11,7 @@ fetch("header.html")
     });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const passwordField = document.getElementById('password');
+    const passwordField = document.getElementById('Senha');
     const togglePassword = document.getElementById('togglePassword');
 
     togglePassword.addEventListener('click', () => {

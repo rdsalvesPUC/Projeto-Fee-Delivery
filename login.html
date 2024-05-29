@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,24 +16,24 @@
                     </div>
                     <div class="container-body">
                         <form action="./button.html">
-                            <div class="user">
-                                <label>CPF ou CNPJ</label>
-                                <input type="text" name="dados-login" id="dados-login" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required />
+                            <div class="form-box">
+                                <label for="CPF ou CNPJ">CPF ou CNPJ</label>
+                                <input id="CPF ou CNPJ" type="text" name="CPF" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required />
                             </div>
-                            <div class="password">
-                                <label>Senha</label>
-                                <input type="password" name="senha" id="password" class="password-field" placeholder="Senha" required />
+                            <div class="form-box">
+                                <label for="Senha">Senha</label>
+                                <input id="Senha" type="password" name="senha" class="password-field" placeholder="Senha" required />
                                 <span class="toggle-password" id="togglePassword">&#128065;</span>
                                 <span class="support-text">Sua senha deve ter 8 caracteres.</span>
                             </div>
                             <div class="row">
                                 <div class="save-data">
-                                    <input type="checkbox" name="remember" id="remember" />
+                                    <input id="remember" type="checkbox" name="remember" />
                                     <label for="remember">Salvar dados de acesso</label>
                                 </div>
                                 <div>
                                     <button class="primary-text-link">
-                                        <a class="text-link" href="./esqueci-senha.html">Esqueceu sua senha?</a>
+                                        <a class="text-link" href="./forgot-password.html">Esqueceu sua senha?</a>
                                     </button>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                     </div>
                     <hr />
                     <button class="primary-text-link">
-                        <span class="text-link">Ainda não possui uma conta? <a href="./cadastro.html">Cadastre-se</a></span>
+                        <span class="text-link">Ainda não possui uma conta? <a href="./register.html">Cadastre-se</a></span>
                     </button>
                 </div>
                 <div class="container-img">
