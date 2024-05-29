@@ -272,8 +272,17 @@ input[type=radio] {
     width: 100%;
 }
 
+<<<<<<< HEAD
 /* .user input[type="text"], .password input[type="password"], */
 
+=======
+.form-box#form-box-small {
+    width: 50%;
+}
+
+/* .user input[type="text"], .password input[type="password"], */
+
+>>>>>>> main
 .form-box input {
     border: 0px;
     border-bottom: 1px solid #DDE1E6;
@@ -294,7 +303,13 @@ input[type=radio] {
     box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 
+=======
+.hidden {
+    display: none;
+}
+>>>>>>> main
 
 input:active, 
 input:focus,
@@ -435,6 +450,10 @@ button[data-text="Proximo"] {
     font-style: normal;
     font-weight: 700;
     line-height: 110%; /* 1.65rem */
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* --------------------- */

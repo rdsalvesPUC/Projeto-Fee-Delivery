@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Login</title>
+    </head>
+    <body>
+        <main class="main">
+            <nav id="header-container"></nav>
+            <div class="page-body-splited">
+                <div class="container">
+                    <div class="container-header">
+                        <h1>Log In</h1>
+                    </div>
+                    <div class="container-body">
+                        <form action="index.html">
+                            <div class="form-box">
+                                <label for="CPF ou CNPJ">CPF ou CNPJ</label>
+                                <input id="CPF ou CNPJ" type="text" name="CPF" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required />
+                            </div>
+                            <div class="form-box">
+                                <label for="Senha">Senha</label>
+                                <input id="Senha" type="password" name="senha" class="password-field" placeholder="Senha" required />
+                                <span class="toggle-password" id="togglePassword">&#128065;</span>
+                                <span class="support-text">Sua senha deve ter 8 caracteres.</span>
+                            </div>
+                            <div class="row">
+                                <div class="save-data">
+                                    <input id="remember" type="checkbox" name="remember" />
+                                    <label for="remember">Salvar dados de acesso</label>
+                                </div>
+                                <div>
+                                    <button class="primary-text-link">
+                                        <a class="text-link" href="./esqueci-senha.html">Esqueceu sua senha?</a>
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="submit" class="button-filled" value="Log in" />
+                        </form>
+                    </div>
+                    <hr />
+                    <button class="primary-text-link">
+                        <span class="text-link">Ainda não possui uma conta? <a href="./index.html">Cadastre-se</a></span>
+                    </button>
+                </div>
+                <div class="container-img">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 428 503" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M378.217 34.2766H49.7833L214 227.232L378.217 34.2766ZM398.734 58.3849L234.518 251.339L398.734 444.294V58.3849ZM193.483 251.339L29.2658 58.3842V444.295L193.483 251.339ZM49.7836 468.402L214 275.447L378.217 468.402H49.7836ZM0.25 0.182968V502.495H427.75V0.182968H0.25Z" fill="#F2F4F8" />
+                    </svg>
+                </div>
+            </div>
+            <footer id="footer-container"></footer>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>
