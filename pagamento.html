@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de pagamento</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .parte-de-cima {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items:self-end;
+            justify-content: space-between;
+            background: #DDE1E6;
+        }
+        .forma-de-pagamento{
+            box-sizing: border-box;
+            margin: 32px, 64px;
+        }
+        .parte-branca{
+            flex: 1;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .parte-cinza{
+            background: #F2F4F8;
+            border: 1px dashed #C1C7CD;
+
+            display: flex;
+            min-width: 40%;
+            padding: 100px 200px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 24px;
+        }
+    </style>
+</head>
+<body>
+    <main class="main">
+        <nav id="header-container"></nav>
+        <div class="parte-de-cima">
+            <div class="forma-de-pagamento">
+                <h1>Formas de Pagamento</h1>
+                <p>Aqui você consegue configurar múltiplas formas de pagamento diferentes para repassar o pagamento dos motoboys contratados</p>
+            </div>
+            <div>
+                <button class="primary-filled" type="submit">
+                    <span class="button-text">Cadastrar novo cartão</span>
+                </button>
+            </div>
+        </div>
+        <div class="home-financeiro-pagamento">
+            <p>Home > Financeiro > Formas de Pagamento</p>
+        </div>
+        <div class="page-body-centered">
+            <div class="parte-cinza">
+                <h1>Não há cartões associados</h1>
+                <p>Selecione Cadastrar Nova Cartão para poder utilizá-lo como meio de pagamento dos seus contratos.</p>
+            </div>
+        </div>
+        <footer id="footer-container"></footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
