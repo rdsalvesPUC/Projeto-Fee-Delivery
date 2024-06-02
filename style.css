@@ -39,6 +39,10 @@
     background: linear-gradient(to bottom, #DDE1E6 35%, #ffffff 35%);
 }
 
+#page-background-gray {
+    background: var(--CoolGray-10, #F2F4F8);
+}
+
 h1 {
     color: var(--CoolGray-90, #21272A);
 
@@ -51,6 +55,18 @@ h1 {
     margin: 0px;
 }
 
+.h1-real {
+    color: var(--CoolGray-90, #21272A);
+
+    /* Heading/1 */
+    font-family: Roboto;
+    font-size: 3.375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    /* 3.7125rem */
+}
+
 h2 {
     color: var(--CoolGray-90, #21272A);
 
@@ -60,6 +76,31 @@ h2 {
     font-weight: 700;
     line-height: 110%;
     /* 1.375rem */
+}
+
+.h2-real {
+    color: var(--CoolGray-90, #21272A);
+    text-align: center;
+
+    /* Heading/2 */
+    font-family: Roboto;
+    font-size: 2.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    /* 2.8875rem */
+}
+
+h3 {
+    color: var(--CoolGray-90, #21272A);
+
+    /* Heading/4 */
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    /* 1.65rem */
 }
 
 h4 {
@@ -107,6 +148,18 @@ small {
     font-weight: 400;
     line-height: 140%;
     /* 1.225rem */
+}
+
+.big-numbers-text {
+    color: var(--CoolGray-60, #697077);
+
+    /* Body/M */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    /* 1.4rem */
 }
 
 hr {
@@ -183,7 +236,13 @@ a:focus {
     width: 100%;
 }
 
-.container-photos{
+.button-row {
+    display: flex;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.container-photos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -192,9 +251,9 @@ a:focus {
     margin-bottom: 45px;
 }
 
-.container-photos#center{
+.container-photos#center {
     justify-content: center;
-}           
+}
 
 .card {
     border-radius: 0.75rem;
@@ -308,8 +367,6 @@ input[type=radio] {
     /* 1.05rem */
 }
 
-/* .user, .password,  */
-
 .form-box {
     display: flex;
     flex-direction: column;
@@ -325,8 +382,6 @@ input[type=radio] {
 .form-box#form-box-small {
     width: 50%;
 }
-
-/* .user input[type="text"], .password input[type="password"], */
 
 .form-box input {
     border: 0px;
@@ -392,6 +447,7 @@ button {
     height: 3.5rem;
     padding: 1rem;
     text-decoration: none;
+    cursor: pointer;
 }
 
 button[data-text="Proximo"] {
@@ -401,6 +457,16 @@ button[data-text="Proximo"] {
 button[data-text="Action"] {
     height: auto;
     padding: 0;
+}
+
+button[data-text="Buscar-Vagas"],
+button[data-text="Buscar Motoboys"] {
+    padding: 0rem 2rem;
+}
+
+button[data-text="Motoboy"],
+button[data-text="Empresa"] {
+    width: 100%;
 }
 
 .primary-filled {
@@ -535,10 +601,14 @@ header .logo-text {
     width: fit-content;
 }
 
-/* #user-logado,
+#user-logado,
 #user-deslogado {
     display: none;
-} */
+}
+
+.home #user-deslogado {
+    display: contents;
+}
 
 .menu ul {
     display: flex;
@@ -765,4 +835,75 @@ footer .logo-text {
     flex-direction: row;
     align-items: self-start;
     gap: 1rem;
+}
+
+/* --------------------- */
+/*      CSS da Home      */
+/* --------------------- */
+.section-hero {
+    background: var(--CoolGray-10, #F2F4F8);
+
+    display: flex;
+    padding: 5rem;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.section-hero .row {
+    gap: 5rem;
+    max-width: 1440px;
+}
+
+.section-hero .columm,
+.section-big-numbers .columm {
+    gap: 3rem;
+}
+
+.section-big-numbers {
+    display: flex;
+    padding: 5rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.section-big-numbers .columm {
+    max-width: 1440px;
+}
+
+.big-number-card {
+    border: 1px solid var(--CoolGray-20, #DDE1E6);
+    background: var(--Default-White, #FFF);
+
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 0 0;
+}
+
+.big-numbers-icon-box {
+    background: var(--CoolGray-20, #DDE1E6);
+
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------ */
+/*      Alinhamentos Básicos      */
+/* ------------------------------ */
+
+.full-align-left {
+    justify-content: left;
+    text-align: left;
+}
+
+.full-align-center {
+    justify-content: center;
+    text-align: center;
 }
