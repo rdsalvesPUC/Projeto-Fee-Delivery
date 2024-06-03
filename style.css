@@ -21,7 +21,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
     flex-direction: column;
     padding: 3rem;
@@ -33,6 +33,16 @@
     align-items: center;
     text-align: center;
     flex-direction: row;
+}
+
+.page-body-full {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 #page-background {
@@ -161,6 +171,18 @@ small {
     /* 1.4rem */
 }
 
+.filter-subtitle {
+    color: #000;
+
+    /* Subtitle/M */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 110%;
+    /* 1.1rem */
+}
+
 hr {
     border: 0;
     border-top: 1px solid #DDE1E6;
@@ -184,8 +206,8 @@ a:focus {
 .container {
     background-color: #ffffff;
     border: 1px solid #DDE1E6;
-    min-width: 40%;
-    /* max-width: 60%; */
+    min-width: 50%;
+    /* max-width: ; */
     text-align: left;
     padding: 3rem;
     display: flex;
@@ -239,6 +261,7 @@ a:focus {
     display: flex;
     justify-content: left;
     gap: 1rem;
+    width: 100%;
 }
 
 .container-photos {
@@ -464,7 +487,8 @@ button[data-text="Buscar Motoboys"] {
 }
 
 button[data-text="Motoboy"],
-button[data-text="Empresa"] {
+button[data-text="Empresa"],
+button[data-text="Button Text"] {
     width: 100%;
 }
 
@@ -595,6 +619,7 @@ header .logo-text {
     gap: 1rem;
     position: relative;
     justify-content: space-between;
+    z-index: 1;
 }
 
 .header .row {
@@ -612,6 +637,7 @@ header .logo-text {
 
 .home-logada #user-logado {
     display: contents;
+    z-index: 999;
 }
 
 .menu ul {
@@ -841,9 +867,9 @@ footer .logo-text {
     gap: 1rem;
 }
 
-/* --------------------- */
-/*      CSS da Home      */
-/* --------------------- */
+/* ------------------------------- */
+/*      CSS da Home Deslogada      */
+/* ------------------------------- */
 .section-hero {
     background: var(--CoolGray-10, #F2F4F8);
 
@@ -898,35 +924,190 @@ footer .logo-text {
     align-items: center;
 }
 
+/* ------------------------------- */
+/*        CSS da Home LOGADA       */
+/* ------------------------------- */
+.breadcrumb {
+    gap: 0.5rem;
+}
+
+.breadcrumb p {
+    color: var(--CoolGray-60, #697077);
+}
+
 /* -------------------- */
 /*      Search Bar      */
 /* -------------------- */
+.search {
+    background: rgba(245, 245, 245, 0.50);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* position: relative; */
+    justify-content: center;
+}
+
+.search-field-box {
+    border: 1px solid var(--CoolGray-30, #C1C7CD);
+    background: var(--CoolGray-10, #F2F4F8);
+
+    display: flex;
+    height: auto;
+    align-items: center;
+}
+
+.search-field-box input {
+    border: 0px;
+    background-color: #F2F4F8;
+    padding: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.search-field-box select {
+    border: 0px;
+    background-color: #F2F4F8;
+    padding: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* -------------------- */
+/*        Filtros       */
+/* -------------------- */
+.filters {
+    border-radius: 1rem;
+    border: 1px solid var(--CoolGray-20, #DDE1E6);
+
+    display: flex;
+    width: 19.75rem;
+    margin-top: 0.5rem;
+    padding: 1.5rem 0rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.filter-item {
+    border-top: 1px solid var(--CoolGray-20, #DDE1E6);
+
+    display: flex;
+    padding: 1rem 1rem 0rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+}
 
 /* --------------- */
 /*      Cards      */
 /* --------------- */
-.card {
+.content-box {
     border: 1px solid var(--CoolGray-20, #DDE1E6);
     background: var(--Default-White, #FFF);
 
     display: flex;
     width: 19.75rem;
-    height: 32.75rem;
+    height: auto;
     flex-direction: column;
     align-items: center;
     flex-shrink: 0;
+    margin: 0.5rem;
 }
 
-.card-img {
+.content-img {
     background: #DDE1E6;
 
     display: flex;
+    position: relative;
+    height: 13.75rem;
     padding: 2.78225rem 4.01175rem 2.80369rem 4.01175rem;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    flex: 1 0 0;
+    gap: 0.625rem;
+    flex-shrink: 0;
     align-self: stretch;
 }
+
+.content-icon {
+    border-radius: 6.25rem;
+    background: var(--CoolGray-10, #F2F4F8);
+
+    position: absolute;
+    right: 1rem;
+    top: 9.75rem;
+
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+}
+
+.content-body {
+    display: flex;
+    padding: 1.5rem 1rem 1rem 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    align-self: stretch;
+}
+
+.primary-filled .content-button,
+.primary-outlined .content-button {
+    /* Button/M */
+    font-family: Roboto;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 1rem */
+    letter-spacing: 0.03125rem;
+}
+
+/* -------------------- */
+/*      Financeiro      */
+/* -------------------- */
+.parte-de-cima {
+    background: #DDE1E6;
+    display: flex;
+    padding: 2rem 4rem;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.forma-de-pagamento {
+    box-sizing: border-box;
+    margin: 32px, 64px;
+}
+
+.parte-branca {
+    flex: 1;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.parte-cinza {
+    background: #f2f4f8;
+    border: 1px dashed #c1c7cd;
+
+    display: flex;
+    min-width: 40%;
+    padding: 100px 200px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+}
+
 
 /* ------------------------------ */
 /*      Alinhamentos Básicos      */
@@ -935,6 +1116,7 @@ footer .logo-text {
 .full-align-left {
     justify-content: left;
     text-align: left;
+    align-self: flex-start;
 }
 
 .full-align-center {
@@ -945,4 +1127,62 @@ footer .logo-text {
 .full-align-right {
     justify-content: right;
     text-align: right;
+}
+
+.self-align-right {
+    align-self: flex-end;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+
+/* ------------------------- */
+/*      Medidas Básicas      */
+/* ------------------------- */
+.page-max-width {
+    max-width: 1440px;
+    align-self: center;
+}
+
+.page-set-width {
+    width: 1440px;
+}
+
+.container-max-width {
+    min-width: fit-content;
+}
+
+.width-40 {
+    width: 40%;
+}
+
+.orientation-row {
+    display: inline-flex;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.stretch {
+    align-self: stretch;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.padding-lr-1 {
+    padding: 0rem 1rem;
+}
+
+.gap-1 {
+    display: flex;
+    gap: 1rem;
+}
+
+.align-items-flex-end {
+    align-items: flex-end;
 }

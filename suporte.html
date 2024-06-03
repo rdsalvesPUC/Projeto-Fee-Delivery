@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suporte</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="main">
-        <nav id="header-container"></nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Suporte</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="main">
+            <nav class="home-logada" id="header-container"></nav>
             <div class="page-body-centered" id="page-background">
-                
-                    <div class="container">
-                        <div class="container-header">
-                            <h1>Suporte ao Cliente</h1>
-                            <p>Entre em contato através do formulário para solicitar suporte as suas dúvidas ou reportar bugs.</p>
-                        </div>
-                        <div class="container-body">
-                                <form action="#" method="post">
-                                    <div class="form-box">
-                                        <label for="name">E-mail ou CNPJ:</label>
-                                        <input type="text" id="name" name="name" required>
-                                    </div>
-                                    <div class="form-box"> 
-                                        <label for="categoria">Categoria do problema:</label>
-                                        <select name="forma-pagamento" id="forma-pagamento">
-                                            <option value="" disabled selected>Escolha uma opção</option>
-                                            <option value="bugs">Bugs com o site</option>
-                                            <option value="cadastro">Não estou conseguindo me cadastrar</option>
-                                            <option value="pagamento">Não estão aceitando minha forma de pagamento ou recebimento</option>
-                                            <option value="vaga">Não estou conseguir publicar minha vaga</option>
-                                        </select>
-                                    </div>
-                                    <div class="descricao">            
-                                        <label for="descricao">Descrição do Problema:</label>
-                                        <textarea id="descricao" name="descricao" rows="4" required></textarea>
-                                    </div>
-                                    <div>
-                                        <button class="primary-filled" type="submit">
-                                            <span class="button-text">Abrir ticket</span>
-                                        </button>
-                                    </div>
-                                </form>
-                        </div>
+                <div class="container">
+                    <div class="container-header">
+                        <h1>Suporte ao Cliente</h1>
+                        <p>Entre em contato através do formulário para solicitar suporte as suas dúvidas ou reportar bugs.</p>
                     </div>
-                                                        
+                    <div class="container-body">
+                        <form>
+                            <div class="form-box">
+                                <label for="name">E-mail ou CNPJ:</label>
+                                <input type="text" id="name" name="name" required />
+                            </div>
+                            <div class="form-box">
+                                <label for="categoria">Categoria do problema:</label>
+                                <select name="forma-pagamento" id="forma-pagamento">
+                                    <option value="" disabled selected>Escolha uma opção</option>
+                                    <option value="bugs">Bugs com o site</option>
+                                    <option value="cadastro">Não estou conseguindo me cadastrar</option>
+                                    <option value="pagamento">Não estão aceitando minha forma de pagamento ou recebimento</option>
+                                    <option value="vaga">Não estou conseguir publicar minha vaga</option>
+                                </select>
+                            </div>
+                            <div class="descricao">
+                                <label for="descricao">Descrição do Problema:</label>
+                                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+                            </div>
+                            <div class="full-align-right self-align-right">
+                                <button class="primary-filled" type="submit">
+                                    <a href="./home-logada.html">
+                                        <span class="button-text">Abrir ticket</span>
+                                    </a>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        <footer id="footer-container"></footer>
-    </main>
+            <footer id="footer-container"></footer>
+        </main>
 
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
