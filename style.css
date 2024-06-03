@@ -927,7 +927,15 @@ footer .logo-text {
 /* ------------------------------- */
 /*        CSS da Home LOGADA       */
 /* ------------------------------- */
+.caixa {
+    display: flex;
+    padding: 2rem 4rem;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
 .breadcrumb {
+    display: flex;
     gap: 0.5rem;
 }
 
@@ -1100,7 +1108,7 @@ footer .logo-text {
 
     display: flex;
     min-width: 40%;
-    padding: 100px 200px;
+    padding: 5rem 3rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1131,6 +1139,10 @@ footer .logo-text {
 
 .self-align-right {
     align-self: flex-end;
+}
+
+.self-align-center {
+    align-self: center;
 }
 
 .justify-content-center {
@@ -1175,7 +1187,18 @@ footer .logo-text {
 }
 
 .padding-lr-1 {
-    padding: 0rem 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.padding-lr-4 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.padding-tb-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .gap-1 {
@@ -1185,4 +1208,8 @@ footer .logo-text {
 
 .align-items-flex-end {
     align-items: flex-end;
+}
+
+.box-sizing-border-box {
+    box-sizing: border-box;
 }
