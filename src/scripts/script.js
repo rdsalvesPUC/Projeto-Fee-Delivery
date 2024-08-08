@@ -1,29 +1,29 @@
-fetch("footer.html")
+fetch("../components/footer.html")
     .then((response) => response.text())
     .then((data) => {
         document.getElementById("footer-container").innerHTML = data;
     });
 
-fetch("header.html")
-    .then((response) => response.text())
-    .then((data) => {
+fetch("../components/header.html")
+	.then((response) => response.text())
+	.then((data) => {
         document.getElementById("header-container").innerHTML = data;
     });
 
-fetch("search-bar.html")
+fetch("../components/search-bar.html")
     .then((response) => response.text())
     .then((data) => {
         document.getElementById("search").innerHTML = data;
     });
 
-fetch("filters.html")
+fetch("../components/filters.html")
     .then((response) => response.text())
     .then((data) => {
         document.getElementById("filters").innerHTML = data;
     });
 
 function loadCard(container) {
-    fetch("card.html")
+    fetch("../components/card.html")
         .then((response) => response.text())
         .then((data) => {
             container.innerHTML = data;
