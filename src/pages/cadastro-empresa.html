@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Cadastro Empresa</title>
-    </head>
-    <body>
-        <main class="main">
-            <nav id="header-container"></nav>
-            <div class="page-body-splited">
-                <div class="container">
-                    <div class="container-header">
-                        <h1>Cadastro Empresa</h1>
-                    </div>
-                    <div class="container-body">
-                        <form action="./cadastro-concluido.html">
-                            <div class="form-box">
-                                <label>Nome da Empresa</label>
-                                <input type="text" name="nome-empresa" id="nome-empresa" placeholder="Digite o Nome da Empresa" required />
-                            </div>
-                            <div class="form-box">
-                                <label>CNPJ</label>
-                                <input type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ da Empresa" required />
-                            </div>
-                            <div class="form-box">
-                                <label>Inscrição Estadual</label>
-                                <input type="text" name="estadual" id="estadual" placeholder="Digite a Inscrição Estadual da Empresa" required />
-                            </div>
-                            <div class="row">
-                                <div class="form-box" id="box">
-                                    <label>E-mail</label>
-                                    <input type="text" name="email" id="email" placeholder="Digite o E-mail" required />
-                                </div>
-                                <div class="form-box" id="form-box-small">
-                                <label>Telefone</label>
-                                <input type="text" name="telefone" id="telefone" placeholder="(00) 0 0000-0000" required />
-                            </div>
-                            </div>
-                            <div class="save-data">
-                                <input type="checkbox" name="aceitotermos" id="aceitotermos" />
-                                <label for="aceitotermos">Estou de acordo com os Termos de Uso da plataforma</label>
-                            </div>
-                            <input type="submit" class="button-filled" value="Cadastrar" />
-                        </form>
-                    </div>
-                    <hr />
-                    <button class="primary-text-link">
-                        <span class="text-link">Já possui uma conta? <a href="./login.html">Faça Log In</a></span>
-                    </button>
-                </div>
-                <div class="container-img">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 428 503" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M378.217 34.2766H49.7833L214 227.232L378.217 34.2766ZM398.734 58.3849L234.518 251.339L398.734 444.294V58.3849ZM193.483 251.339L29.2658 58.3842V444.295L193.483 251.339ZM49.7836 468.402L214 275.447L378.217 468.402H49.7836ZM0.25 0.182968V502.495H427.75V0.182968H0.25Z" fill="#F2F4F8" />
-                    </svg>
-                </div>
-            </div>
-            <footer id="footer-container"></footer>
-        </main>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <link rel="stylesheet" href="/public/styles/main.css" /> -->
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<title>Cadastro Empresa</title>
+	</head>
+	<body>
+		<main class="main">
+			<nav id="header-container"></nav>
+			<div class="page-body-splited">
+				<div class="container">
+					<div class="container-header">
+						<h1>Cadastro Empresa</h1>
+					</div>
+					<div class="container-body">
+						<form action="./cadastro-concluido.html">
+							<div class="form-box">
+								<label>Nome da Empresa</label>
+								<input type="text" name="nome-empresa" id="nome-empresa" placeholder="Digite o Nome da Empresa" required />
+							</div>
+							<div class="form-box">
+								<label>CNPJ</label>
+								<input type="text" name="cnpj" id="cnpj" placeholder="Digite o CNPJ da Empresa" required />
+							</div>
+							<div class="form-box">
+								<label>Inscrição Estadual</label>
+								<input type="text" name="estadual" id="estadual" placeholder="Digite a Inscrição Estadual da Empresa" required />
+							</div>
+							<div class="row">
+								<div class="form-box" id="box">
+									<label>E-mail</label>
+									<input type="text" name="email" id="email" placeholder="Digite o E-mail" required />
+								</div>
+								<div class="form-box" id="form-box-small">
+									<label>Telefone</label>
+									<input type="text" name="telefone" id="telefone" placeholder="(00) 0 0000-0000" required />
+								</div>
+							</div>
+							<div class="save-data">
+								<input type="checkbox" name="aceitotermos" id="aceitotermos" />
+								<label for="aceitotermos">Estou de acordo com os Termos de Uso da plataforma</label>
+							</div>
+							<input type="submit" class="button-filled" value="Cadastrar" />
+						</form>
+					</div>
+					<hr />
+					<button class="primary-text-link">
+						<span class="text-link">Já possui uma conta? <a href="./login.html">Faça Log In</a></span>
+					</button>
+				</div>
+				<div class="container-img">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 428 503" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M378.217 34.2766H49.7833L214 227.232L378.217 34.2766ZM398.734 58.3849L234.518 251.339L398.734 444.294V58.3849ZM193.483 251.339L29.2658 58.3842V444.295L193.483 251.339ZM49.7836 468.402L214 275.447L378.217 468.402H49.7836ZM0.25 0.182968V502.495H427.75V0.182968H0.25Z" fill="#F2F4F8" />
+					</svg>
+				</div>
+			</div>
+			<footer id="footer-container"></footer>
+		</main>
 
-        <script src="script.js"></script>
-    </body>
+		<script src="../scripts/script.js"></script>
+	</body>
 </html>

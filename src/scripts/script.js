@@ -22,6 +22,12 @@ fetch("../components/filters.html")
         document.getElementById("filters").innerHTML = data;
     });
 
+fetch("../components/admin-menu.html")
+    .then((response) => response.text())
+    .then((data) => {
+        document.getElementById("container-menu").innerHTML = data;
+    });
+
 function loadCard(container) {
     fetch("../components/card.html")
         .then((response) => response.text())

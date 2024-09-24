@@ -1,130 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
-        <title>Filters</title>
-    </head>
-    <body>
-        <div class="filters">
-            <div class="padding-lr-1">
-                <h2>Filtrar resultados por:</h2>
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Valor da proposta</span>
-                <div class="row">
-                    <div class="form-box">
-                        <label for="valor-minimo">Mínimo</label>
-                        <input type="text" name="valor-minimo" id="valor-minimo" placeholder="R$ 50,00" required />
-                    </div>
-                    <div class="form-box">
-                        <label for="valor-maximo">Máximo</label>
-                        <input type="text" name="valor-maximo" id="valor-maximo" placeholder="R$ 1000,00" required />
-                    </div>
-                </div>
-                <img src="./images/valor-bar.png" alt="" />
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Região de busca</span>
-                <div class="row">
-                    <div class="form-box width-40">
-                        <label for="estado">Estado</label>
-                        <select name="estado" id="estado">
-                            <option value="PR">PR</option>
-                        </select>
-                    </div>
-                    <div class="form-box">
-                        <label for="cidade">Cidade</label>
-                        <select name="cidade" id="cidade">
-                            <option value="" disabled selected>Escolha a cidade</option>
-                            <option value="Curitiba">Curitiba</option>
-                            <option value="Londrina">Londrina</option>
-                            <option value="Maringá">Maringá</option>
-                            <option value="Ponta Grossa">Ponta Grossa</option>
-                            <option value="Cascavel">Cascavel</option>
-                            <option value="São José dos Pinhais">São José dos Pinhais</option>
-                            <option value="Foz do Iguaçu">Foz do Iguaçu</option>
-                            <option value="Colombo">Colombo</option>
-                            <option value="Guarapuava">Guarapuava</option>
-                            <option value="Paranaguá">Paranaguá</option>
-                            <option value="Araucária">Araucária</option>
-                            <option value="Toledo">Toledo</option>
-                            <option value="Apucarana">Apucarana</option>
-                            <option value="Pinhais">Pinhais</option>
-                            <option value="Campo Largo">Campo Largo</option>
-                            <option value="Almirante Tamandaré">Almirante Tamandaré</option>
-                            <option value="Piraquara">Piraquara</option>
-                            <option value="Umuarama">Umuarama</option>
-                            <option value="Arapongas">Arapongas</option>
-                            <option value="Cambé">Cambé</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Raio de busca</span>
-                <div class="form-box">
-                    <label for="raio-maximo">Máximo</label>
-                    <select name="raio-maximo" id="raio-maximo">
-                        <option value="10">10km</option>
-                        <option value="25">25km</option>
-                        <option value="50">50km</option>
-                        <option value="80">80km</option>
-                        <option value="100">100km</option>
-                        <option value="150">150km</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Duração do trabalho</span>
-                <div class="row">
-                    <div class="form-box">
-                        <label for="duracao-minimo">Mínimo</label>
-                        <select name="duracao-minimo" id="duracao-minimo">
-                            <option value="1-dia">1 dia</option>
-                            <option value="1-semana">1 semana</option>
-                            <option value="2-semana">2 semana</option>
-                            <option value="1-mes">1 mes</option>
-                            <option value="2-mes">2 mes</option>
-                            <option value="3-mes">3 mes</option>
-                        </select>
-                    </div>
-                    <div class="form-box">
-                        <label for="duracao-maximo">Máximo</label>
-                        <select name="duracao-maximo" id="duracao-maximo">
-                            <option value="1-dia">1 dia</option>
-                            <option value="1-semana">1 semana</option>
-                            <option value="2-semana">2 semana</option>
-                            <option value="1-mes">1 mes</option>
-                            <option value="2-mes">2 mes</option>
-                            <option value="3-mes">3 mes</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Carga horária</span>
-                <div class="form-box">
-                    <select name="carga-horaria" id="carga-horaria">
-                        <option value="" disabled selected>Escolha uma opção</option>
-                        <option value="4">Meio período (4horas/dia)</option>
-                        <option value="8">Período completo (8horas/dia)</option>
-                        <option value="12">Plantão (12horas/dia)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="filter-item">
-                <span class="filter-subtitle full-align-left">Documentação</span>
-                <div class="button-row">
-                    <input type="checkbox" name="possuirMEI" id="possuirMEI" /><label for="possuirMEI" class="flex-1">Possui MEI</label>
-                    <label>89</label>
-                </div>
-                <div class="button-row">
-                    <input type="checkbox" name="possuirEAR" id="possuirEAR" /><label for="possuirEAR" class="flex-1">Possui EAR</label>
-                    <label>15</label>
-                </div>
-            </div>
-        </div>
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- <link rel="stylesheet" href="/public/styles/main.css" /> -->
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<title>Filters</title>
+	</head>
+	<body>
+		<div class="filters">
+			<div class="padding-lr-1">
+				<h2>Filtrar resultados por:</h2>
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Valor da proposta</span>
+				<div class="row">
+					<div class="form-box">
+						<label for="valor-minimo">Mínimo</label>
+						<input type="text" name="valor-minimo" id="valor-minimo" placeholder="R$ 50,00" required />
+					</div>
+					<div class="form-box">
+						<label for="valor-maximo">Máximo</label>
+						<input type="text" name="valor-maximo" id="valor-maximo" placeholder="R$ 1000,00" required />
+					</div>
+				</div>
+				<img src="./images/valor-bar.png" alt="" />
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Região de busca</span>
+				<div class="row">
+					<div class="form-box width-40">
+						<label for="estado">Estado</label>
+						<select name="estado" id="estado">
+							<option value="PR">PR</option>
+						</select>
+					</div>
+					<div class="form-box">
+						<label for="cidade">Cidade</label>
+						<select name="cidade" id="cidade">
+							<option value="" disabled selected>Escolha a cidade</option>
+							<option value="Curitiba">Curitiba</option>
+							<option value="Londrina">Londrina</option>
+							<option value="Maringá">Maringá</option>
+							<option value="Ponta Grossa">Ponta Grossa</option>
+							<option value="Cascavel">Cascavel</option>
+							<option value="São José dos Pinhais">São José dos Pinhais</option>
+							<option value="Foz do Iguaçu">Foz do Iguaçu</option>
+							<option value="Colombo">Colombo</option>
+							<option value="Guarapuava">Guarapuava</option>
+							<option value="Paranaguá">Paranaguá</option>
+							<option value="Araucária">Araucária</option>
+							<option value="Toledo">Toledo</option>
+							<option value="Apucarana">Apucarana</option>
+							<option value="Pinhais">Pinhais</option>
+							<option value="Campo Largo">Campo Largo</option>
+							<option value="Almirante Tamandaré">Almirante Tamandaré</option>
+							<option value="Piraquara">Piraquara</option>
+							<option value="Umuarama">Umuarama</option>
+							<option value="Arapongas">Arapongas</option>
+							<option value="Cambé">Cambé</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Raio de busca</span>
+				<div class="form-box">
+					<label for="raio-maximo">Máximo</label>
+					<select name="raio-maximo" id="raio-maximo">
+						<option value="10">10km</option>
+						<option value="25">25km</option>
+						<option value="50">50km</option>
+						<option value="80">80km</option>
+						<option value="100">100km</option>
+						<option value="150">150km</option>
+					</select>
+				</div>
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Duração do trabalho</span>
+				<div class="row">
+					<div class="form-box">
+						<label for="duracao-minimo">Mínimo</label>
+						<select name="duracao-minimo" id="duracao-minimo">
+							<option value="1-dia">1 dia</option>
+							<option value="1-semana">1 semana</option>
+							<option value="2-semana">2 semana</option>
+							<option value="1-mes">1 mes</option>
+							<option value="2-mes">2 mes</option>
+							<option value="3-mes">3 mes</option>
+						</select>
+					</div>
+					<div class="form-box">
+						<label for="duracao-maximo">Máximo</label>
+						<select name="duracao-maximo" id="duracao-maximo">
+							<option value="1-dia">1 dia</option>
+							<option value="1-semana">1 semana</option>
+							<option value="2-semana">2 semana</option>
+							<option value="1-mes">1 mes</option>
+							<option value="2-mes">2 mes</option>
+							<option value="3-mes">3 mes</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Carga horária</span>
+				<div class="form-box">
+					<select name="carga-horaria" id="carga-horaria">
+						<option value="" disabled selected>Escolha uma opção</option>
+						<option value="4">Meio período (4horas/dia)</option>
+						<option value="8">Período completo (8horas/dia)</option>
+						<option value="12">Plantão (12horas/dia)</option>
+					</select>
+				</div>
+			</div>
+			<div class="filter-item">
+				<span class="filter-subtitle full-align-left">Documentação</span>
+				<div class="button-row">
+					<input type="checkbox" name="possuirMEI" id="possuirMEI" /><label for="possuirMEI" class="flex-1">Possui MEI</label>
+					<label>89</label>
+				</div>
+				<div class="button-row">
+					<input type="checkbox" name="possuirEAR" id="possuirEAR" /><label for="possuirEAR" class="flex-1">Possui EAR</label>
+					<label>15</label>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
