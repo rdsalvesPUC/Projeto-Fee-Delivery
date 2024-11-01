@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/styles/main.css" />
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<link rel="stylesheet" href="/public/styles/color-pallet.css" />
+		<title>Editar Dados do Cartão</title>
+	</head>
+	<body>
+		<main class="main">
+			<div class="backdrop page-body-centered">
+				<div class="bg-white border border-solid border-gray-200 p-12 flex flex-col gap-12 w-[48rem]">
+					<div class="container-header">
+						<h1>Editar Dados da Empresa</h1>
+					</div>
+					<div class="container-body">
+						<form action="#" method="post">
+							<div class="form-box">
+								<label for="CPF">CPF</label>
+								<input type="text" name="CPF" id="CPF" placeholder="000.000.000-00" required />
+							</div>
+							<div class="form-box">
+								<label for="numero-cartao">Número do Cartão</label>
+								<input type="text" id="numero-cartao" name="numero-cartao" placeholder="0000.0000.0000.0000.0000" required />
+							</div>
+							<div class="form-box">
+								<label for="name">Nome e Sobrenome (como escrito no cartão)</label>
+								<input type="text" id="name" name="name" required />
+							</div>
+							<div class="row">
+								<div class="form-box" id="form-left-columm">
+									<label for="validade">Vencimento</label>
+									<input type="text" id="validade" name="validade" placeholder="mm/aa" />
+								</div>
+								<div class="form-box" id="form-right-columm">
+									<label for="cvv">CVV</label>
+									<input type="text" id="cvv" name="cvv" placeholder="Código de segurança" />
+								</div>
+							</div>
+							<div class="flex flex-row gap-1 justify-end">
+								<button class="primary-no-border"><span class="button-text">Cancelar</span></button>
+								<button class="primary-filled"><span class="button-text px-4">Salvar</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="../scripts/script.js"></script>
+	</body>
+</html>

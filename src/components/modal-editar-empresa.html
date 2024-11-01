@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/styles/main.css" />
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<link rel="stylesheet" href="/public/styles/color-pallet.css" />
+		<title>Editar Dados da Empresa</title>
+	</head>
+	<body>
+		<main class="main">
+			<div class="backdrop page-body-centered">
+				<div class="bg-white border border-solid border-gray-200 p-12 flex flex-col gap-12 w-[48rem]">
+					<div class="container-header">
+						<h1>Editar Dados da Empresa</h1>
+					</div>
+					<div class="container-body">
+						<form action="">
+							<div class="form-box">
+								<label>Nome da Empresa</label>
+								<input type="text" name="nome-empresa" id="nome-empresa" placeholder="Digite o Nome da Empresa" required />
+							</div>
+							<div class="form-box">
+								<label>CNPJ</label>
+								<input type="text" name="cnpj" id="cnpj" placeholder="00.000.000/0000-00" required />
+							</div>
+							<div class="form-box">
+								<label>Inscrição Estadual</label>
+								<input type="text" name="estadual" id="estadual" placeholder="00.000000-0" required />
+							</div>
+							<div class="row">
+								<div class="form-box" id="box">
+									<label>E-mail</label>
+									<input type="text" name="email" id="email" placeholder="Digite o E-mail" required />
+								</div>
+								<div class="form-box" id="form-box-small">
+									<label>Telefone</label>
+									<input type="text" name="telefone" id="telefone" placeholder="(00) 0 0000-0000" required />
+								</div>
+							</div>
+							<div class="flex flex-row gap-1 justify-end">
+								<button class="primary-no-border"><span class="button-text">Cancelar</span></button>
+								<button class="primary-filled"><span class="button-text px-4">Salvar</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="../scripts/script.js"></script>
+	</body>
+</html>

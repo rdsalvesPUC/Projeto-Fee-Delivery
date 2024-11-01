@@ -1,0 +1,7 @@
+.bg-coolgray-10 {
+	background: var(--CoolGray-10, #F2F4F8);
+}
+
+.border-coolgray-20 {
+	border: 1px solid var(--CoolGray-20, #DDE1E6);
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/styles/main.css" />
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<link rel="stylesheet" href="/public/styles/color-pallet.css" />
+		<title>Editar Dados da Motoboy</title>
+	</head>
+	<body>
+		<main class="main">
+			<div class="backdrop page-body-centered">
+				<div class="bg-white border border-solid border-gray-200 p-12 flex flex-col gap-12 w-[48rem]">
+					<div class="container-header">
+						<h1>Editar Dados da Motoboy</h1>
+					</div>
+					<div class="container-body">
+						<form action="#" method="post">
+							<div class="row">
+                                <div class="form-box" id="box"
+                                    <label>Nome</label>
+                                    <input type="text" name="nome" id="nome" placeholder="Digite seu nome" required />
+                                </div>
+                                <div class="form-box" id="box">
+                                    <label>Sobrenome</label>
+                                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite seu sobrenome" required />
+                                </div>
+                            </div>
+                            <div class="form-box">
+                                <label>CPF</label>
+                                <input type="text" name="CPF" id="CPF" placeholder="Digite seu CPF" required />
+                            </div>
+                            <div class="form-box">
+                                <label>Email</label>
+                                <input type="text" name="email" id="email" placeholder="Digite seu email" required />
+                            </div>
+							<div class="row">
+								<div class="form-box">
+									<label>Data de Nascimento</label>
+									<input type="text" name="idade" id="idade" placeholder="00/00/0000" required />
+								</div>
+								<div class="form-box">
+									<label>Telefone</label>
+									<input type="text" name="telefone" id="telefone" placeholder="(00) 0 0000-0000" required />
+								</div>
+							</div>
+							<div class="flex flex-row gap-1 justify-end">
+								<button class="primary-no-border"><span class="button-text">Cancelar</span></button>
+								<button class="primary-filled"><span class="button-text px-4">Salvar</span></button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script src="../scripts/script.js"></script>
+	</body>
+</html>
