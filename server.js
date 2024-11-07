@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const empresaRoutes = require('./src/scripts/empresaRoutes');
 const motoboyRoutes = require('./src/scripts/motoboyRoutes');
+const loginRoutes = require('./src/scripts/loginRoutes');
 
 const app = express();
 const port = 3000;
@@ -12,6 +13,7 @@ app.use(express.json());
 
 app.use('/api', empresaRoutes);
 app.use('/api', motoboyRoutes);
+app.use('/api', loginRoutes);
 
 // Configurar o Express para servir arquivos estáticos
 app.use(express.static(path.join(__dirname, 'src/pages')));

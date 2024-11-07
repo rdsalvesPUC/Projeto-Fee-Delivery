@@ -16,16 +16,16 @@
 						<h1>Log In</h1>
 					</div>
 					<div class="container-body">
-						<form action="./home-logada.html">
+						<form>
 							<div class="form-box">
-								<label for="CPF ou CNPJ">CPF ou CNPJ</label>
-								<input id="CPF ou CNPJ" type="text" name="CPF" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required />
+								<label for="CPF-ou-CNPJ">CPF ou CNPJ</label>
+								<input id="CPF-ou-CNPJ" type="text" name="CPF-ou-CNPJ" placeholder="Digite o CPF para Motoboys e CNPJ para Empresas" required />
 							</div>
 							<div class="form-box">
 								<label for="Senha">Senha</label>
 								<input id="Senha" type="password" name="senha" class="password-field" placeholder="Senha" required />
 								<span class="toggle-password" id="togglePassword">&#128065;</span>
-								<span class="support-text">Sua senha deve ter 8 caracteres.</span>
+								<span class="support-text">Sua senha deve ter 6 caracteres.</span>
 							</div>
 							<div class="row">
 								<div class="save-data">
@@ -54,7 +54,15 @@
 			</div>
 			<footer id="footer-container"></footer>
 		</main>
-		<script src="../scripts/load-components.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				const session = localStorage.getItem("userSession") || sessionStorage.getItem("userSession");
+				if (session) {
+					window.location.href = "./home-logada.html";
+				}
+			});
+		</script>
 		<script src="../scripts/login.js"></script>
+		<script src="../scripts/load-components.js"></script>
 	</body>
 </html>

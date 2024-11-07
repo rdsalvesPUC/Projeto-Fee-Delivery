@@ -1,3 +1,7 @@
+-- Cria o banco de dados
+CREATE DATABASE IF NOT EXISTS fee_delivery;
+USE fee_delivery;
+
 -- Tabela de usuários
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
@@ -15,6 +19,7 @@ CREATE TABLE motoboys (
     sobrenome VARCHAR(100),
     cpf CHAR(11) UNIQUE NOT NULL,
     data_nascimento DATE,
+    mei VARCHAR(200),
     FOREIGN KEY (id_motoboy) REFERENCES usuarios(id_usuario)
 );
 
