@@ -1,35 +1,35 @@
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new MutationObserver(() => {
-    const empresasMenu = document.getElementById('empresas-menu');
-    const motoboysMenu = document.getElementById('motoboys-menu');
-    const searchInput = document.getElementById('busca-filtros-dashboard');
+        const empresasMenu = document.getElementById('empresas-menu');
+        const motoboysMenu = document.getElementById('motoboys-menu');
+        const searchInput = document.getElementById('busca-filtros-dashboard');
 
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.toLowerCase().trim();
-        filtrarTabela(query);
-    });
-
-    function filtrarTabela(query) {
-        const rows = document.querySelectorAll('#table-content > div');
-        
-        rows.forEach(row => {
-            const rowText = row.innerText.toLowerCase();
-            row.style.display = rowText.includes(query) ? '' : 'none';
-        });
-    }
-
-    if (empresasMenu && motoboysMenu) {
-        empresasMenu.addEventListener('click', (event) => {
-            event.preventDefault();
-            carregarEmpresas();
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase().trim();
+            filtrarTabela(query);
         });
 
-        motoboysMenu.addEventListener('click', (event) => {
-            event.preventDefault();
-            carregarMotoboys();
-        });
+        function filtrarTabela(query) {
+            const rows = document.querySelectorAll('#table-content > div');
+            
+            rows.forEach(row => {
+                const rowText = row.innerText.toLowerCase();
+                row.style.display = rowText.includes(query) ? '' : 'none';
+            });
+        }
 
-        observer.disconnect();
+        if (empresasMenu && motoboysMenu) {
+            empresasMenu.addEventListener('click', (event) => {
+                event.preventDefault();
+                carregarEmpresas();
+            });
+
+            motoboysMenu.addEventListener('click', (event) => {
+                event.preventDefault();
+                carregarMotoboys();
+            });
+
+            observer.disconnect();
         }
     });
 
@@ -50,8 +50,22 @@ document.addEventListener("DOMContentLoaded", function() {
         tableHeader.innerHTML = '';
 
         const colunas = tabela === 'empresas'
-            ? [{ nome: 'Nome da Empresa', largura: 'w-3/12' }, { nome: 'CNPJ', largura: 'w-2/12' }, { nome: 'Inscrição Estadual', largura: 'w-2/12' }, { nome: 'E-mail', largura: 'w-3/12' }, { nome: 'Telefone', largura: 'w-2/12' }]
-            : [{ nome: 'Nome', largura: 'w-2/12' }, { nome: 'Sobrenome', largura: 'w-2/12' }, { nome: 'CPF', largura: 'w-2/12' }, { nome: 'MEI', largura: 'w-2/12' }, { nome: 'Data de Nascimento', largura: 'w-2/12' }, { nome: 'Telefone', largura: 'w-2/12' }, { nome: 'E-mail', largura: 'w-2/12' }];
+            ? [
+                { nome: 'Nome da Empresa', largura: 'w-3/12' },
+                { nome: 'CNPJ', largura: 'w-2/12' },
+                { nome: 'Inscrição Estadual', largura: 'w-2/12' },
+                { nome: 'E-mail', largura: 'w-3/12' },
+                { nome: 'Telefone', largura: 'w-2/12' }
+            ]
+            : [
+                { nome: 'Nome', largura: 'w-2/12' },
+                { nome: 'Sobrenome', largura: 'w-2/12' },
+                { nome: 'CPF', largura: 'w-2/12' },
+                { nome: 'MEI', largura: 'w-2/12' },
+                { nome: 'Data de Nascimento', largura: 'w-2/12' },
+                { nome: 'Telefone', largura: 'w-2/12' },
+                { nome: 'E-mail', largura: 'w-2/12' }
+            ];
 
         const checkboxHeader = document.createElement('div');
         checkboxHeader.className = 'px-3 py-4 w-11 flex items-center';
@@ -77,6 +91,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Função de deletar cadastro
+    async function deletarCadastro(id, tipo) {
+        const confirmacao = confirm("Tem certeza de que deseja deletar este cadastro?");
+        
+        if (confirmacao) {
+            try {
+                const response = await fetch(`http://localhost:3000/api/${tipo}/${id}`, {
+                    method: 'DELETE',
+                });
+                console.log(response);
+                
+                if (response.ok) {
+                    alert("Cadastro deletado com sucesso!");
+                    // Remover a linha da tabela
+                    document.getElementById(`row-${tipo}-${id}`).remove();
+                } else {
+                    alert("Erro ao deletar o cadastro.");
+                }
+            } catch (error) {
+                console.error("Erro ao deletar cadastro:", error);
+                alert("Erro ao deletar o cadastro.");
+            }
+        }
+    }
+
+    // Adiciona eventos aos botões de deletar em cada linha
+    function adicionarEventoDeletar(row, id, tipo) {
+        const deleteButton = row.querySelector('[data-text="Deletar Cadastro"]');
+        
+        deleteButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            deletarCadastro(id, tipo);
+        });
+    }
+
     async function carregarEmpresas() {
         configurarCabecalhoTabela('empresas');
         try {
@@ -87,17 +136,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
             empresas.forEach(empresa => {
                 const row = document.createElement('div');
-                row.className = 'flex flex-1 flex-row h-14 bg-white border-coolgray-20 border-t-0';
+                row.className = 'flex flex-1 flex-row h-14 bg-white hover:bg-gray-100 border-coolgray-20 border-t-0';
+                row.id = `row-empresas-${empresa.id_empresa}`;  // Define um ID para a linha
+
                 row.innerHTML = `
                     <div class="px-3 py-4 flex w-11 items-center"><input type="checkbox" class="row-checkbox" /></div>
                     <div class="truncate px-3 py-4 w-3/12"><span class="tr-font">${empresa.nome_empresa}</span></div>
                     <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${empresa.cnpj}</span></div>
                     <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${empresa.inscricao_estadual}</span></div>
-                    <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${empresa.telefone}</span></div>
                     <div class="truncate px-3 py-4 w-3/12"><span class="tr-font">${empresa.email}</span></div>
-                    <div class="px-3 py-4 flex w-11 items-center"><i class="img-threedots"></i></div>
+                    <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${empresa.telefone}</span></div>
+                    <div id="table-menu-threedots" class="flex w-11 items-center menu">
+                        <ul class="size-full">
+                            <li class="size-full">
+                                <a class="flex items-center justify-center size-full" href="#"><i class="img-threedots"></i></a>
+                                <ul class="sub-menu z-40">
+                                    <li><a href="#">Editar Dados</a></li>
+                                    <li><a href="#" data-text="Deletar Cadastro">Deletar Cadastro</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 `;
                 tableContent.appendChild(row);
+                adicionarEventoDeletar(row, empresa.id_empresa, 'empresas');
             });
         } catch (error) {
             console.error("Erro ao carregar empresas:", error);
@@ -114,9 +176,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             motoboys.forEach(motoboy => {
                 const row = document.createElement('div');
-                row.className = 'flex flex-1 flex-row h-14 bg-white border-coolgray-20 border-t-0';
+                row.className = 'flex flex-1 flex-row h-14 bg-white hover:bg-gray-100 border-coolgray-20 border-t-0';
+                row.id = `row-motoboys-${motoboy.id_motoboy}`;  // Define um ID para a linha
 
-                // Formata a data de nascimento
                 const dataNascimentoFormatada = formatarData(motoboy.data_nascimento);
 
                 row.innerHTML = `
@@ -128,9 +190,20 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${dataNascimentoFormatada}</span></div>
                     <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${motoboy.telefone}</span></div>
                     <div class="truncate px-3 py-4 w-2/12"><span class="tr-font">${motoboy.email}</span></div>
-                    <div class="px-3 py-4 flex w-11 items-center"><i class="img-threedots"></i></div>
+                    <div id="table-menu-threedots" class="flex w-11 items-center menu">
+                        <ul class="size-full">
+                            <li class="size-full">
+                                <a class="flex items-center justify-center size-full" href="#"><i class="img-threedots"></i></a>
+                                <ul class="sub-menu z-40">
+                                    <li><a href="#">Editar Dados</a></li>
+                                    <li><a href="#" data-text="Deletar Cadastro">Deletar Cadastro</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 `;
                 tableContent.appendChild(row);
+                adicionarEventoDeletar(row, motoboy.id_motoboy, 'motoboys');
             });
         } catch (error) {
             console.error("Erro ao carregar motoboys:", error);

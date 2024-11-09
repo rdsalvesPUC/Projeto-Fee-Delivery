@@ -56,9 +56,9 @@ router.post('/cadastro-empresa', (req, res) => {
 
 router.get('/empresas', (req, res) => {
     const sql = `
-        SELECT e.nome_empresa, e.cnpj, e.inscricao_estadual, u.email, u.telefone
-        FROM empresas e
-        JOIN usuarios u ON e.id_empresa = u.id_usuario
+        SELECT empresas.id_empresa, empresas.nome_empresa, empresas.cnpj, empresas.inscricao_estadual, usuarios.email, usuarios.telefone
+        FROM empresas
+        JOIN usuarios ON empresas.id_empresa = usuarios.id_usuario
     `;
 
     db.query(sql, (err, results) => {
@@ -69,5 +69,22 @@ router.get('/empresas', (req, res) => {
         res.status(200).json(results);
     });
 });
+
+router.delete('/empresas/:id', (req, res) => {
+    const { id } = req.params;
+    const sql = `DELETE FROM empresas WHERE id_empresa = ?`;
+
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            console.error("Erro ao deletar empresa:", err);
+            res.status(500).json({ error: "Erro ao deletar empresa" });
+        } else if (result.affectedRows === 0) {
+            res.status(404).json({ message: "Empresa não encontrada" });
+        } else {
+            res.status(200).json({ message: "Empresa deletada com sucesso" });
+        }
+    });
+});
+
 
 module.exports = router;

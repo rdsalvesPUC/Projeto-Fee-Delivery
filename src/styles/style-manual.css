@@ -1253,3 +1253,38 @@ footer .logo-text {
     justify-content: center;
     align-items: center;
 }
+
+/* ------------------------- */
+/*  Menu Three Dots Tabelas  */
+/* ------------------------- */
+#table-menu-threedots .menu {
+    top: 100%;
+    right: 0;
+}
+
+#table-menu-threedots.menu .sub-menu {
+    top: 80%;
+    right: -20%;
+    left: unset;
+}
+
+#table-menu-threedots.menu>ul {
+    background: unset;
+}
+
+#table-menu-threedots.menu>ul>li>a:hover {
+    background: unset;
+    border-radius: 0rem;
+}
+
+#table-menu-threedots.menu>ul>li:hover>a {
+    background: unset;
+}
+
+#table-menu-threedots.menu .sub-menu a[data-text="Deletar Cadastro"] {
+    color: #DA1E28;
+}
+
+#table-menu-threedots.menu .sub-menu a {
+    width: auto;
+}

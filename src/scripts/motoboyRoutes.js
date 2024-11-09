@@ -56,9 +56,9 @@ router.post('/cadastro-motoboy', (req, res) => {
 
 router.get('/motoboys', (req, res) => {
     const sql = `
-        SELECT m.nome, m.sobrenome, m.cpf, m.mei, m.data_nascimento, u.email, u.telefone
-        FROM motoboys m
-        JOIN usuarios u ON m.id_motoboy = u.id_usuario
+        SELECT motoboys.id_motoboy, motoboys.nome, motoboys.sobrenome, motoboys.cpf, motoboys.mei, motoboys.data_nascimento, usuarios.email, usuarios.telefone
+        FROM motoboys
+        JOIN usuarios ON motoboys.id_motoboy = usuarios.id_usuario
     `;
 
     db.query(sql, (err, results) => {
@@ -69,5 +69,22 @@ router.get('/motoboys', (req, res) => {
         res.status(200).json(results);
     });
 });
+
+router.delete('/motoboys/:id', (req, res) => {
+    const { id } = req.params;
+    const sql = `DELETE FROM motoboys WHERE id_motoboy = ?`;
+
+    db.query(sql, [id], (err, result) => {
+        if (err) {
+            console.error("Erro ao deletar motoboy:", err);
+            res.status(500).json({ error: "Erro ao deletar motoboy" });
+        } else if (result.affectedRows === 0) {
+            res.status(404).json({ message: "Motoboy não encontrado" });
+        } else {
+            res.status(200).json({ message: "Motoboy deletado com sucesso" });
+        }
+    });
+});
+
 
 module.exports = router;
