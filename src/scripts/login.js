@@ -19,19 +19,20 @@ document.querySelector('form').addEventListener('submit', async function (event)
     if (response.ok) {
         alert('Login realizado com sucesso!');
 
+        // Armazena a sessão no localStorage se "Salvar dados de acesso" estiver marcado
         if (remember) {
             localStorage.setItem('userSession', JSON.stringify(result.session));
         } else {
-            window.userSession = result.session;
+            // Armazena a sessão temporária no sessionStorage
+            sessionStorage.setItem('userSession', JSON.stringify(result.session));
         }
 
+        // Redireciona para a página logada
         window.location.href = './home-logada.html';
     } else {
         alert('Erro ao fazer login: ' + result.message);
     }
 });
-
-
 
 
 document.addEventListener('DOMContentLoaded', (event) => {

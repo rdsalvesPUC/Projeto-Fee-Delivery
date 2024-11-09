@@ -5,14 +5,12 @@ const db = require('./db');
 router.post('/cadastro-motoboy', (req, res) => {
     const { nome, sobrenome, CPF, MEI, dataNascimento, telefone, email, senha, aceitoTermos } = req.body;
 
-    // Iniciar a transação
     db.beginTransaction((err) => {
         if (err) {
             console.error('Erro ao iniciar transação:', err);
             return res.status(500).json({ message: 'Erro ao iniciar transação' });
         }
 
-        // Inserir na tabela usuarios
         const sqlUsuarios = `
             INSERT INTO usuarios (email, senha, telefone, tipo_usuario, opt_in_tos)
             VALUES (?, ?, ?, 'Motoboy', ?)
@@ -21,15 +19,13 @@ router.post('/cadastro-motoboy', (req, res) => {
         db.query(sqlUsuarios, [email, senha, telefone, aceitoTermos ? 1 : 0], (err, result) => {
             if (err) {
                 console.error('Erro ao cadastrar usuário:', err);
-                // Em caso de erro, desfaz a transação
                 return db.rollback(() => {
                     res.status(500).json({ message: 'Erro ao cadastrar usuário' });
                 });
             }
 
-            const idUsuario = result.insertId; // ID do usuário recém-inserido
+            const idUsuario = result.insertId;
 
-            // Inserir na tabela motoboys
             const sqlMotoboys = `
                 INSERT INTO motoboys (id_motoboy, nome, sobrenome, cpf, mei, data_nascimento)
                 VALUES (?, ?, ?, ?, ?, ?)
@@ -38,13 +34,11 @@ router.post('/cadastro-motoboy', (req, res) => {
             db.query(sqlMotoboys, [idUsuario, nome, sobrenome, CPF, MEI, dataNascimento], (err, result) => {
                 if (err) {
                     console.error('Erro ao cadastrar motoboy:', err);
-                    // Em caso de erro, desfaz a transação
                     return db.rollback(() => {
                         res.status(500).json({ message: 'Erro ao cadastrar motoboy' });
                     });
                 }
 
-                // Se tudo deu certo, finaliza a transação
                 db.commit((err) => {
                     if (err) {
                         console.error('Erro ao confirmar transação:', err);
@@ -57,6 +51,22 @@ router.post('/cadastro-motoboy', (req, res) => {
                 });
             });
         });
+    });
+});
+
+router.get('/motoboys', (req, res) => {
+    const sql = `
+        SELECT m.nome, m.sobrenome, m.cpf, m.mei, m.data_nascimento, u.email, u.telefone
+        FROM motoboys m
+        JOIN usuarios u ON m.id_motoboy = u.id_usuario
+    `;
+
+    db.query(sql, (err, results) => {
+        if (err) {
+            console.error('Erro ao buscar motoboys:', err);
+            return res.status(500).json({ message: 'Erro ao buscar motoboys' });
+        }
+        res.status(200).json(results);
     });
 });
 

@@ -9,13 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
         .then((response) => response.text())
         .then((data) => {
             document.getElementById("header-container").innerHTML = data;
-
+    
+            // Obtém a sessão do localStorage ou sessionStorage
             const session = JSON.parse(localStorage.getItem('userSession')) || JSON.parse(sessionStorage.getItem('userSession'));
     
-            if (session && session.userType !== 'admin') {
-                document.getElementById("user-admin").style.display = 'none';
+            const adminButton = document.getElementById("user-admin");
+    
+            // Se não houver sessão ou o usuário não for admin, oculta o botão
+            if (!session || session.userType !== 'admin') {
+                adminButton.style.display = 'none';
             }
-        }).catch(error => console.error('Erro ao carregar o cabeçalho:', error));
+        })
+        .catch(error => console.error('Erro ao carregar o cabeçalho:', error));
+    
+    
     
     fetch("../components/search-bar.html")
         .then((response) => response.text())

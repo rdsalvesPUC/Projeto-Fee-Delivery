@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/styles/main.css" />
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<link rel="stylesheet" href="/public/styles/color-pallet.css" />
+		<title>Fee Delivery - Admin Board</title>
+	</head>
+	<body>
+		<main class="main" id="page-background-gray">
+			<div class="flex flex-1 flex-row">
+				<div class="flex" id="container-menu"></div>
+				<div class="flex flex-1 overflow-auto flex-col p-6 gap-6">
+					<div id="admin-page-title" class="h2-real flex">Cadastro de Empresas</div>
+					<div class="flex flex-row h-12 justify-between border-b border-gray-300">
+						<span class="filter-subtitle py-4">Filtros</span>
+						<div class="flex flex-row px-4 py-3 gap-2 bg-white">
+							<i class="img-search"></i>
+							<input class="focus:outline-0 focus:ring-0 focus:border-0" type="text" name="buscar" id="busca-filtros-dashboard" placeholder="Buscar" />
+						</div>
+					</div>
+					<div class="flex flex-col" id="table">
+						<div class="flex flex-1 flex-row h-14 bg-coolgray-10 border-coolgray-20">
+							<div class="px-3 py-4 w-11 flex items-center"><input type="checkbox" /></div>
+							<div class="truncate px-3 py-4 w-3/12"><span class="th-font">Nome Empresa</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="th-font">CNPJ</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="th-font">Inscrição Estadual</span></div>
+							<div class="truncate px-3 py-4 w-3/12"><span class="th-font">E-mail</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="th-font">Telefone</span></div>
+							<div class="px-3 py-4 w-11 flex items-center"><i class="img-threedots"></i></div>
+						</div>
+						<div class="flex flex-1 flex-row h-14 bg-white border-coolgray-20 border-t-0">
+							<div class="px-3 py-4 flex w-11 items-center"><input type="checkbox" /></div>
+							<div class="truncate px-3 py-4 w-3/12"><span class="tr-font">Nome da Empresa LTDA</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="tr-font">00.00.000/0000-00</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="tr-font">123456789</span></div>
+							<div class="truncate px-3 py-4 w-3/12"><span class="tr-font">email.empresa@empresa.com.br</span></div>
+							<div class="truncate px-3 py-4 w-2/12"><span class="tr-font">(00) 0000-0000</span></div>
+							<div class="px-3 py-4 flex w-11 items-center"><i class="img-threedots"></i></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer id="footer-container"></footer>
+		</main>
+		<script src="../scripts/load-components.js"></script>
+		<script src="../scripts/admin-tabelas.js"></script>
+	</body>
+</html>
