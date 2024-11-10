@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Erro ao carregar o cabeçalho:', error));
     
-    
-    
     fetch("../components/search-bar.html")
         .then((response) => response.text())
         .then((data) => {
@@ -53,4 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.card-container').forEach(container => {
         loadCard(container);
     });
+
+    window.carregarModalEditarEmpresa = function carregarModalEditarEmpresa() {
+        return fetch("../components/modal-editar-empresa.html")
+            .then(response => response.text())
+            .then(html => {
+                document.body.insertAdjacentHTML('beforeend', html);
+            })
+            .catch(error => console.error('Erro ao carregar o modal de edição:', error));
+    }
+
+    window.carregarModalEditarMotoboy = function carregarModalEditarMotoboy() {
+        return fetch('../components/modal-editar-motoboy.html')
+            .then(response => response.text())
+            .then(html => {
+                // Adiciona o modal ao corp do HTML
+                document.body.insertAdjacentHTML('beforeend', html);
+            })
+            .catch(error => console.error('Erro ao carregar o modal de edição de motoboy:', error));
+    };
+
 });

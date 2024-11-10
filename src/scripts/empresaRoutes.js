@@ -24,7 +24,7 @@ router.post('/cadastro-empresa', (req, res) => {
                 });
             }
 
-            const idUsuario = result.insertId; // ID do usuário recém-inserido
+            const idUsuario = result.insertId;
 
             const sqlEmpresas = `
                 INSERT INTO empresas (id_empresa, nome_empresa, cnpj, inscricao_estadual)
@@ -70,6 +70,28 @@ router.get('/empresas', (req, res) => {
     });
 });
 
+router.put('/empresas/:id', (req, res) => {
+    const { id } = req.params;
+    const { nome_empresa, cnpj, inscricao_estadual, email, telefone } = req.body;
+
+    const sql = `
+        UPDATE empresas 
+        JOIN usuarios ON empresas.id_empresa = usuarios.id_usuario
+        SET empresas.nome_empresa = ?, empresas.cnpj = ?, empresas.inscricao_estadual = ?, 
+            usuarios.email = ?, usuarios.telefone = ?
+        WHERE empresas.id_empresa = ?
+    `;
+    db.query(sql, [nome_empresa, cnpj, inscricao_estadual, email, telefone, id], (err, result) => {
+        if (err) {
+            console.error("Erro ao atualizar empresa:", err);
+            res.status(500).json({ error: "Erro ao atualizar empresa" });
+        } else {
+            res.status(200).json({ message: "Empresa atualizada com sucesso" });
+        }
+    });
+});
+
+
 router.delete('/empresas/:id', (req, res) => {
     const { id } = req.params;
     const sql = `DELETE FROM empresas WHERE id_empresa = ?`;
@@ -85,6 +107,5 @@ router.delete('/empresas/:id', (req, res) => {
         }
     });
 });
-
 
 module.exports = router;
