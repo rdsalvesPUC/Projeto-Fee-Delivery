@@ -59,3 +59,26 @@ CREATE TABLE contas_bancarias (
     tipo_conta ENUM('Corrente', 'Poupança') NOT NULL,
     FOREIGN KEY (id_motoboy) REFERENCES motoboys(id_motoboy)
 );
+
+CREATE TABLE vagas (
+    id_vaga INT AUTO_INCREMENT PRIMARY KEY,
+    id_empresa INT NOT NULL,
+    tipo_vaga ENUM('pontual', 'fixo') NOT NULL,
+    titulo VARCHAR(200) NOT NULL,
+    descricao VARCHAR(1000) NOT NULL,
+    endereco VARCHAR(300) NOT NULL,
+    numero VARCHAR(20),
+    data_inicio DATE NOT NULL,
+    data_fim DATE,
+    horario_inicio TIME,
+    horario_fim TIME,
+    requisito_ear BOOLEAN DEFAULT FALSE,
+    requisito_mei BOOLEAN DEFAULT FALSE,
+    forma_pagamento ENUM('credito', 'debito', 'dinheiro', 'bitcoin') NOT NULL,
+    valor DECIMAL(10, 2) NOT NULL,
+    status_publicacao ENUM('rascunho', 'publicada', 'finalizada') DEFAULT 'rascunho',
+    data_publicacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (id_empresa) REFERENCES empresas(id_empresa)
+);
+
