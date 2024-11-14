@@ -3,10 +3,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const pontualRadio = document.getElementById("pontual");
     const fixoRadio = document.getElementById("fixo");
 
-    const idEmpresa = 12;
+    // Recupera o ID da empresa logada do localStorage ou sessionStorage
+    const session = JSON.parse(localStorage.getItem("userSession")) || JSON.parse(sessionStorage.getItem("userSession"));
+    console.log(session);
+    const idEmpresa = session ? session.userId : null;
+    console.log(idEmpresa);
 
     nextButton.addEventListener("click", async (event) => {
         event.preventDefault();
+
+        if (!idEmpresa) {
+            alert("Erro: ID da empresa não encontrado. Faça login novamente.");
+            return;
+        }
 
         let tipoVaga;
         if (pontualRadio.checked) tipoVaga = "pontual";

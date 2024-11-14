@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("container-menu").innerHTML = data;
         });
     
-    function loadCard(container) {
-        fetch("../components/card.html")
-            .then((response) => response.text())
-            .then((data) => {
-                container.innerHTML = data;
-            });
-    }
+    // function loadCard(container) {
+    //     fetch("../components/card.html")
+    //         .then((response) => response.text())
+    //         .then((data) => {
+    //             container.innerHTML = data;
+    //         });
+    // }
     
     document.querySelectorAll('.card-container').forEach(container => {
         loadCard(container);

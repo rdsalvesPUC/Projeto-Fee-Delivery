@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/public/styles/main.css" />
+		<link rel="stylesheet" href="../styles/style-manual.css" />
+		<link rel="stylesheet" href="/public/styles/img-lib.css" />
+		<title>Card</title>
+	</head>
+	<body class="page-body-centered">
+		<div class="content-box">
+			<div class="content-img">
+				<i class="card-content-img"></i>
+				<div class="content-icon">
+					<i class="card-fav-icon"></i>
+				</div>
+			</div>
+			<div class="content-body">
+				<div class="columm">
+					<div id="nome_empresa"></div>
+					<h2 id="vaga-titulo"></h2>
+				</div>
+				<p id="vaga-descricao"></p>
+				<div class="flex flex-row w-full justify-between">
+					<div id="tip-vaga" class="text-base font-semibold text-black"></div>
+					<div id="horarios" class="text-base font-semibold text-black"></div>
+				</div>
+				<div class="flex flex-row gap-2">
+					<div class="text-base font-semibold text-black">É necessário ter:</div>
+					<div id="ear-mei"></div>
+				</div>
+				<div class="flex flex-row gap-2">
+					<div class="text-base font-semibold text-black">Pagamento:</div>
+					<div id="forma_pagamento"></div>
+				</div>
+				<div class="flex flex-row gap-2">
+					<div class="text-base font-semibold text-black">Valor:</div>
+					<div id="valor"></div>
+				</div>
+				<div class="button-row">
+					<button data-text="Button Text" class="primary-filled">
+						<a href=""><span class="button-text content-button">Aplicar para vaga</span></a>
+					</button>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../scripts/vaga-card.js"></script>
+</html>

@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     requisito_mei: requisitoMei,
                     forma_pagamento: formaPagamento,
                     valor: valor,
+                    status_publicacao: "publicada"
                 }),
             });
 

@@ -70,6 +70,24 @@ router.get('/empresas', (req, res) => {
     });
 });
 
+router.get('/empresas/:id_empresa', (req, res) => {
+    const idEmpresa = req.params.id_empresa;
+
+    const sql = `SELECT nome_empresa FROM empresas WHERE id_empresa = ?`;
+    db.query(sql, [idEmpresa], (err, result) => {
+        if (err) {
+            console.error('Erro ao buscar empresa:', err);
+            return res.status(500).json({ message: 'Erro ao buscar empresa' });
+        }
+
+        if (result.length > 0) {
+            res.json(result[0]);
+        } else {
+            res.status(404).json({ message: 'Empresa não encontrada' });
+        }
+    });
+});
+
 router.put('/empresas/:id', (req, res) => {
     const { id } = req.params;
     const { nome_empresa, cnpj, inscricao_estadual, email, telefone } = req.body;

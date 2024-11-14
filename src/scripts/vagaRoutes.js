@@ -42,15 +42,15 @@ router.put('/vagas/:id_vaga/descricao', (req, res) => {
 
 router.put('/vagas/:id_vaga/requisitos', (req, res) => {
     const { id_vaga } = req.params;
-    const { requisito_ear, requisito_mei, forma_pagamento, valor } = req.body;
+    const { requisito_ear, requisito_mei, forma_pagamento, valor, status_publicacao } = req.body;
 
     const sql = `
         UPDATE vagas
-        SET requisito_ear = ?, requisito_mei = ?, forma_pagamento = ?, valor = ?
+        SET requisito_ear = ?, requisito_mei = ?, forma_pagamento = ?, valor = ?, status_publicacao = ?
         WHERE id_vaga = ?
     `;
 
-    db.query(sql, [requisito_ear, requisito_mei, forma_pagamento, valor, id_vaga], (err, result) => {
+    db.query(sql, [requisito_ear, requisito_mei, forma_pagamento, valor, status_publicacao, id_vaga], (err, result) => {
         if (err) {
             console.error('Erro ao atualizar os requisitos da vaga:', err);
             res.status(500).json({ message: 'Erro ao atualizar os requisitos da vaga' });
@@ -97,6 +97,27 @@ router.get('/vagas/:id', (req, res) => {
         }
     });
 });
+
+router.get('/vagas', (req, res) => {
+    const sql = `
+        SELECT vagas.id_vaga, vagas.titulo, vagas.descricao, vagas.tipo_vaga, 
+               vagas.horario_inicio, vagas.horario_fim, vagas.requisito_ear, 
+               vagas.requisito_mei, vagas.forma_pagamento, vagas.valor,
+               empresas.nome_empresa
+        FROM vagas
+        JOIN empresas ON vagas.id_empresa = empresas.id_empresa
+        WHERE vagas.status_publicacao = 'publicada';
+    `;
+
+    db.query(sql, (error, results) => {
+        if (error) {
+            console.error('Erro ao buscar vagas:', error);
+            return res.status(500).json({ error: 'Erro ao buscar vagas' });
+        }
+        res.json(results);
+    });
+});
+
 
 router.delete('/vagas/:id', (req, res) => {
     const id_vaga = req.params.id;
